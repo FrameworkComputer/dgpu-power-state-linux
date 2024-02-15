@@ -4,7 +4,18 @@ A simple pyudev script to detect if the dGPU is in low power state or not for th
 ## Considerations
 
 - You need to pip install pyudev.
-- Card 1 is assumed to be dGPU, card2 is assumed to be UMA...change to meet your own needs.
+- Card 1 is assumed to be dGPU, card 2 is assumed to be UMA...change to meet your own needs.
+(This can be edited into whatever you like, see below for section you can tweak to meet your needs - but uneeded for Framework Laptop 16 with dGPU.)
+```
+context = Context()
+for device in context.list_devices(subsystem='drm', DEVTYPE='drm_minor'):
+    # Attempt to dynamically determine which DRM devices correspond to UMA and dGPU
+    if 'card1' in device.sys_path:
+        cards['dGPU'] = device.sys_path.split('/')[-1]
+    elif 'card2' in device.sys_path:
+        cards['UMA'] = device.sys_path.split('/')[-1]
+```
+
 - Data pulled from /sys/class/drm/ giving us event specific driven data.
 
 ## Features
