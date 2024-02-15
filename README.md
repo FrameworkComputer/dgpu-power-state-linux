@@ -41,10 +41,18 @@ sudo dnf install git pip -y && pip install pyudev
 sudo apt update && sudo apt install git pip -y && pip install pyudev
 ```
 
-#### Run the script in a terminal as follows
+## Run the script
+
+#### Run the script in a terminal as follows for Fedora
 
 ```
-git clone https://github.com/FrameworkComputer/dgpu-power-state-linux.git && cd dgpu-power-state-linux && python3 gpu-power-state.py
+git clone https://github.com/FrameworkComputer/dgpu-power-state-linux.git && cd dgpu-power-state-linux && python3 gpu-power-state-Fedora.py
+```
+
+#### Run the script in a terminal as follows for Ubuntu LTS
+
+```
+git clone https://github.com/FrameworkComputer/dgpu-power-state-linux.git && cd dgpu-power-state-linux && python3 gpu-power-state-Ubuntu.py
 ```
 
 ![Power state for dGPU](https://raw.githubusercontent.com/FrameworkComputer/dgpu-power-state-linux/main/dgpu-uma.png "Power state for dGPU")
